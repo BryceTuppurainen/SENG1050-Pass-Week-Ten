@@ -1,0 +1,17 @@
+name: Java Compilation Test
+on: [push]
+jobs:
+  compile-files:
+      runs-on: ubuntu-latest
+      name: Compilation Testing
+
+      steps:
+        - uses: actions/checkout@v2
+
+        - name: Set up JDK 1.8
+          uses: actions/setup-java@v1
+          with:
+            java-version: 1.8
+
+        - name: Compilation of Java Files
+          run: javac *.java
